@@ -10,7 +10,6 @@ A description of the settable variables for this role should go here, including 
 
 ### Required
 
-* `domain`: AD domain name e.g. example.domain.com
 * `samba_share`: Domain name of shared drive e.g. //my-cifs-share.example.domain.com/sharedfolder
 * `samba_mount_user`: Name of the domain user that will be used to authenticate against the shared drive during mount
 * `samba_mount_pass`: Password for `samba_mount_user`
@@ -30,7 +29,6 @@ Example Playbook
         - secrets/mysecrets.yml
       roles:
         - role: marcusianlevine.cifs-mount
-          domain: example.domain.com
           samba_share: "//my-cifs-share.{{ domain }}/sharedfolder"
           samba_mount_user: myuser
           samba_mount_pass: "{{ vaulted_password_value }}"
